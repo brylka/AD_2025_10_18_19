@@ -1,3 +1,4 @@
+from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_iris
@@ -17,3 +18,13 @@ dt_classifier = DecisionTreeClassifier(
     random_state=42
 )
 dt_classifier.fit(X_train, y_train)
+
+print("Model został wytrenowany")
+
+# Predykcja
+y_pred = dt_classifier.predict(X_test)
+
+# Ewaluacja
+print(f"Dokładność: {(accuracy_score(y_test, y_pred)*100):.2f}%")
+print("Raport klasyfikacji:")
+print(classification_report(y_test, y_pred, target_names=iris.target_names))
