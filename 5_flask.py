@@ -8,7 +8,7 @@ model = joblib.load('mnist_model.pkl')
 
 @app.route('/', methods=['GET', 'POST'])
 def digit():
-    prediction = None
+    prediction = ''
     if request.method == 'POST':
         # Pobranie pliku
         file = request.files['image']
