@@ -18,4 +18,4 @@ while True:
   assistant_response = response.choices[0].message.content
   messages.append({"role": "assistant", "content": assistant_response})
   print(assistant_response)
-  print("\n",messages,"\n")
+  #print("\n",messages,"\n")
